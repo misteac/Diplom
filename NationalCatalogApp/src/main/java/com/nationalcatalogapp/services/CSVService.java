@@ -3,6 +3,7 @@ package com.nationalcatalogapp.services;
 import com.nationalcatalogapp.models.Article;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
+import com.opencsv.exceptions.CsvValidationException;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -56,7 +57,7 @@ public class CSVService {
             }
 
             System.out.println("Import from CSV successful: " + filePath);
-        } catch (IOException | NumberFormatException e) {
+        } catch (IOException | CsvValidationException | NumberFormatException e) {
             System.out.println("Error while importing from CSV: " + e.getMessage());
         }
 
